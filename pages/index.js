@@ -1,5 +1,12 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import { AspectRatio } from '../components/AspectRatio'
+import { Box } from '../components/Box'
+import { Button } from '../components/Button'
+import { Flex } from '../components/Flex'
+import { InputGroup } from '../components/InputGroup'
+import { Table } from '../components/Table'
+import { Text } from '../components/Text'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -12,6 +19,40 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+        <Flex direction="row" align="center">
+          <Box sx={{
+            width: "200px"
+          }}>
+            <AspectRatio>
+              <Text size="3">Coba</Text>
+            </AspectRatio>
+          </Box>
+        </Flex>
+        <Table>
+          <Table.Head>
+            <Table.TH>
+              <Table.TR>A</Table.TR>
+            </Table.TH>
+          </Table.Head>
+        </Table>
+        <Box>
+          <Text as="h3">Button Variant</Text>
+          <Button>Button</Button>
+          <Button intent="primary">Primary</Button>
+          <Button intent="secondary">Secondary</Button>
+          <Button intent="success">Success</Button>
+          <Button intent="danger">Danger</Button>
+          <Button intent="warning">Warning</Button>
+          <Button intent="link">Link</Button>
+          <Text as="h3">Outlined Variant</Text>
+          <Button outlined={true}>Button</Button>
+          <Button intent="primary" outlined={true}>Primary</Button>
+          <Button intent="secondary" outlined={true}>Secondary</Button>
+          <Button intent="success" outlined={true}>Success</Button>
+          <Button intent="danger" outlined={true}>Danger</Button>
+          <Button intent="warning" outlined={true}>Warning</Button>
+        </Box>
+        <InputGroup />
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
