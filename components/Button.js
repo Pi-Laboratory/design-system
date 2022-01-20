@@ -5,9 +5,7 @@ import { variant } from "styled-system";
 import cx from "classnames";
 import { rgba } from "polished";
 
-const ButtonRoot = ({ className, outlined, ...props }) => {
-  return <Base className={cx(className, !!outlined && "outlined")} {...props} />
-}
+const ButtonRoot = ({ className, outlined, ...props }) => (<Base className={cx(className, !!outlined && "outlined")} {...props} />)
 
 export const Button = styled(ButtonRoot)(
   css({

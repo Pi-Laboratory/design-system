@@ -1,35 +1,27 @@
 import { Base } from "./Base";
 import { styled } from "../styled.config";
 
-const Comp = ({
+const AspectRatioRoot = ({
   className,
   ratio = 1 / 1,
   style,
   innerProps,
   children
-}) => {
-  return (
-    <div
-      className={className}
+}) => (
+  <div className={className} style={{ paddingBottom: `${100 / ratio}%`, ...style }} >
+    <Base
+      {...innerProps}
       style={{
-        paddingBottom: `${100 / ratio}%`,
-        ...style
+        position: "absolute",
+        inset: 0,
       }}
     >
-      <Base
-        {...innerProps}
-        style={{
-          position: "absolute",
-          inset: 0,
-        }}
-      >
-        {children}
-      </Base>
-    </div >
-  )
-}
+      {children}
+    </Base>
+  </div >
+)
 
-export const AspectRatio = styled(Comp)({
+export const AspectRatio = styled(AspectRatioRoot)({
   position: "relative",
   width: "100%"
 });
