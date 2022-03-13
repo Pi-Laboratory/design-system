@@ -218,7 +218,7 @@ var Button = styled__default["default"](ButtonRoot)(css__default["default"]((_cs
   textDecoration: "none",
   verticalAlign: "middle",
   cursor: "pointer"
-}, _defineProperty(_css, "userSelect", "none"), _defineProperty(_css, "backgroundColor", "transparent"), _defineProperty(_css, "border", "1px solid transparent"), _defineProperty(_css, "py", 1), _defineProperty(_css, "px", 2), _defineProperty(_css, "fontSize", 1), _defineProperty(_css, "borderRadius", 4), _defineProperty(_css, "transition", "color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out"), _defineProperty(_css, "&.outlined", {
+}, _defineProperty(_css, "userSelect", "none"), _defineProperty(_css, "backgroundColor", "transparent"), _defineProperty(_css, "border", "1px solid transparent"), _defineProperty(_css, "fontFamily", "body"), _defineProperty(_css, "py", 1), _defineProperty(_css, "px", 2), _defineProperty(_css, "fontSize", 1), _defineProperty(_css, "borderRadius", 4), _defineProperty(_css, "transition", "color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out"), _defineProperty(_css, "&.outlined", {
   backgroundColor: "transparent"
 }), _defineProperty(_css, "&:hover.outlined", {
   color: "white"
@@ -410,14 +410,15 @@ var Text = styled__default["default"]("span", {
   shouldForwardProp: function shouldForwardProp(prop) {
     return preventProps.indexOf(prop) === -1;
   }
-})({
+})(css__default["default"]({
   // Reset
   lineHeight: '1',
   margin: '0',
   fontWeight: 400,
   fontVariantNumeric: 'tabular-nums',
-  display: 'block'
-}, styledSystem.variant({
+  display: 'block',
+  fontFamily: "body"
+}), styledSystem.variant({
   prop: "size",
   variants: {
     '1': {

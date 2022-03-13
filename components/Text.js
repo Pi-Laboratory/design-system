@@ -1,5 +1,6 @@
 import { styled } from "../styled.config";
 import { variant } from "styled-system";
+import css from "@styled-system/css";
 
 const preventProps = [
   "size"
@@ -8,14 +9,17 @@ const preventProps = [
 export const Text = styled("span", {
   shouldForwardProp: prop =>
     preventProps.indexOf(prop) === -1
-})({
-  // Reset
-  lineHeight: '1',
-  margin: '0',
-  fontWeight: 400,
-  fontVariantNumeric: 'tabular-nums',
-  display: 'block'
-},
+})(
+  css({
+    // Reset
+    lineHeight: '1',
+    margin: '0',
+    fontWeight: 400,
+    fontVariantNumeric: 'tabular-nums',
+    display: 'block',
+
+    fontFamily: "body",
+  }),
   variant({
     prop: "size",
     variants: {

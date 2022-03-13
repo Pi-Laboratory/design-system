@@ -1,4 +1,4 @@
-import { styled } from "../styled.config";
+import { styled } from "../stitches.config";
 import css, { get } from '@styled-system/css';
 
 const sx = props => css(props.sx)(props.theme);
